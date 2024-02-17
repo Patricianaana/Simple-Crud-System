@@ -17,5 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function(){
     return view();
 });
+Route::get('users', function(){
+    return view('saveData');
+});
 
-Route::post(' ', [CrudController::class, ' ']);
+Route::post('users ', [CrudController::class, 'addData']);
