@@ -8,6 +8,13 @@ use Illuminate\Http\Request;
 class CrudController extends Controller
 {
     function addData(Request $req){
+        $req->validate([
+            'name'=>'required min:20',
+            'email'=>'required',
+            'address'=>'required min:10',
+            'contact'=>'required max:10'
+        ]);
+
         $user = new Employee;
         $user->name=$req->name;
         $user->email=$req->email;
