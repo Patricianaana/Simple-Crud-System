@@ -59,4 +59,10 @@ class CrudController extends Controller
             // redirect user to the index page after the update
             return redirect('/');
     }
+
+    function deleteData($id){
+        $data = Employee::find($id);
+        $data->delete();
+        return redirect('/');
+    }
 }

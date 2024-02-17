@@ -38,6 +38,7 @@
                     <td>{{ $user['address'] }}</td>
                     <td>{{ $user['contact'] }}</td>
                     <td><a href="{{ 'edit/'. $user['id'] }}">Edit</a></td>
+                    <td><a href="{{ 'delete/'. $user['id'] }}">Delete</a></td>
                 </tr>
                 @endforeach
 
