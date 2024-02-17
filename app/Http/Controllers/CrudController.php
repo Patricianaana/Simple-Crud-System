@@ -9,10 +9,10 @@ class CrudController extends Controller
 {
     function addData(Request $req){
         $req->validate([
-            'name'=>'required min:20',
+            'name'=>'required',
             'email'=>'required',
-            'address'=>'required min:10',
-            'contact'=>'required max:10'
+            'address'=>'required | min:5',
+            'contact'=>'required | max:10'
         ]);
 
         $user = new Employee;
