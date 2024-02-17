@@ -7,6 +7,7 @@
     <title>Saving Data In Database</title>
 </head>
 <body>
+    {{-- FOR CREATE --}}
     <h1>Saving Employees Data In The Database</h1>
     <form action="users" method="POST">
         @csrf
