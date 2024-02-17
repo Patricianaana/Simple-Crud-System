@@ -32,4 +32,31 @@ class CrudController extends Controller
         return view('index',['users'=>$data]);
 
     }
+
+    //for update
+    //directs user to edit page
+    function editData($id){
+ 
+        $data = Employee::find($id);
+        return view('edit',['data'=>$data]);
+    }
+
+    function updateData(Request $req){
+               //validation user entry
+               $req->validate([
+                'name'=>'required',
+                'email'=>'required',
+                'address'=>'required | min:5',
+                'contact'=>'required | max:10'
+            ]);
+              //updates entry after edit
+            $data = Employee::find($req->id);
+            $data->name=$req->name;
+            $data->email=$req->email;
+            $data->address=$req->address;
+            $data->contact=$req->contact;
+            $data->save();
+            // redirect user to the index page after the update
+            return redirect('/');
+    }
 }

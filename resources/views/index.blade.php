@@ -26,6 +26,8 @@
                     <td>Email</td>
                     <td>Address</td>
                     <td>Contact</td>
+                    {{-- add operation column for update and delete properties --}}
+                    <td>Operation</td>
                 </tr>
 
                 @foreach($users as $user)
@@ -35,6 +37,7 @@
                     <td>{{ $user['email'] }}</td>
                     <td>{{ $user['address'] }}</td>
                     <td>{{ $user['contact'] }}</td>
+                    <td><a href="{{ 'edit/'. $user['id'] }}">Edit</a></td>
                 </tr>
                 @endforeach
 
