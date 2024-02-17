@@ -21,7 +21,7 @@ class CrudController extends Controller
         $user->address=$req->address;
         $user->contact=$req->contact;
         $user->save();
-        return redirect('users');
+        return redirect('/');
 
     }
 }
