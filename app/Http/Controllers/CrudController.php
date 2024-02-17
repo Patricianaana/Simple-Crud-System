@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class CrudController extends Controller
 {
+    // for create
     function addData(Request $req){
         $req->validate([
             'name'=>'required',
@@ -22,6 +23,13 @@ class CrudController extends Controller
         $user->contact=$req->contact;
         $user->save();
         return redirect('/');
+
+    }
+
+    //for read
+    function showData(){
+        $data = Employee::all();
+        return view('index',['users'=>$data]);
 
     }
 }

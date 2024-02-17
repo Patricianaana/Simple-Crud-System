@@ -21,4 +21,5 @@ Route::get('users', function(){
     return view('saveData');
 });
 
-Route::post('users ', [CrudController::class, 'addData']);
+Route::post('users', [CrudController::class, 'addData']);//for create
+Route::get('/', [CrudController::class,'showData']);//for read
