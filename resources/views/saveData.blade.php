@@ -11,13 +11,22 @@
     <form action="users" method="POST">
         @csrf
         <input type="text" name="name" placeholder="Enter full name here">
-        <br><br>
+        <br>
+        <span style="color: red">@error('name'){{ $message }}@enderror</span>
+        {{-- the span tag is to validate the user's input --}}
+        <br>
         <input type="text" name="email" placeholder="Enter email here">
-        <br><br>
+        <br>
+        <span style="color: red">@error ('email'){{ $message }}@enderror</span>
+        <br>
         <input type="text" name="address" placeholder="Enter address here">
-        <br><br>
+        <br>
+        <span style="color: red">@error('address'){{ $message }}@enderror</span>
+        <br>
         <input type="text" name="contact" placeholder="Enter contact here">
-        <br><br>
+        <br>
+        <span style="color: red">@error('contact'){{ $message }}@enderror</span>
+        <br>
         <button type="submit">Add Employee</button>
     </form>
 </body>
