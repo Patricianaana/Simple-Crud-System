@@ -12,14 +12,38 @@
 <form action="/edit" method="POST">
     @csrf
     <input type="hidden" name="id" value="{{ $data['id'] }}">
-    <input type="text" name="name" value="{{ $data['name'] }}"><br>
-    <span style="color: red">@error('name'){{ $message }}@enderror</span><br>
-    <input type="text" name="email" value="{{ $data['email'] }}"><br>
-    <span style="color: red">@error('name'){{ $message }}@enderror</span><br>
-    <input type="text" name="address" value="{{ $data['address'] }}"><br>
-    <span style="color: red">@error('name'){{ $message }}@enderror</span><br>
-    <input type="text" name="contact" value="{{ $data['contact'] }}"><br>
-    <span style="color: red">@error('name'){{ $message }}@enderror</span><br>
+    <div class="" style="margin-bottom: 10px">
+        <input type="text" name="name" value="{{ $data['name'] }}"><br>
+        @error('name')
+            <span style="color: red">
+                {{ $message }}
+            </span>
+        @enderror
+    </div>
+    <div class="" style="margin-bottom: 10px">
+        <input type="text" name="email" value="{{ $data['email'] }}"><br>
+        @error('email')
+            <span style="color: red">
+                {{ $message }}
+            </span>
+        @enderror
+    </div>    
+    <div class="" style="margin-bottom: 10px">
+        <input type="text" name="address" value="{{ $data['address'] }}"><br>
+        @error('address')
+            <span style="color: red">
+                {{ $message }}
+            </span>
+        @enderror
+    </div>
+    <div class="" style="margin-bottom: 10px">
+        <input type="text" name="contact" value="{{ $data['contact'] }}"><br>
+        @error('contact')
+            <span style="color: red">
+                {{ $message }}
+            </span>
+        @enderror
+    </div>
     <button type="submit">Update</button>
 </form>
 </body>

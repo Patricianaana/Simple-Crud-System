@@ -24,5 +24,5 @@ Route::get('users', function(){
 Route::post('users', [CrudController::class, 'addData']);//for create
 Route::get('/', [CrudController::class,'showData']);//for read
 Route::get('edit/{id}', [CrudController::class,'editData']); //for edit
-Route::post('edit',[CrudController::class,'updateData']); //for updating
+Route::post('/edit',[CrudController::class,'updateData']); //for updating
 Route::get('delete/{id}',[CrudController::class,'deleteData']);
