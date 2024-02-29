@@ -7,8 +7,31 @@
     <title>Employee Schools</title>
 </head>
 <body>
-    <form action="">
-        
-    </form>
+    <div>
+        <h1 style="text-align: center">Welcome to Profile!</h1>
+    </div>
+    <div>
+        <table border="5">
+            <tr>
+                <td>ID</td>
+                <td>Employee's Name</td>
+                <td>Elementary School</td>
+                <td>Middle School</td>
+                <td>High School</td>
+                <td>College</td>
+            </tr>
+
+            {{-- @foreach($users as $user)
+            <tr>
+                <td>{{$user['id']}}</td>
+                <td>{{$user['name']}}</td>
+                <td>{{$user['elementary']}}</td>
+                <td>{{$user['middle_school']}}</td>
+                <td>{{$user['high_school']}}</td>
+                <td>{{$user['college']}}</td>  
+            </tr>
+            @endforeach --}}
+        </table>
+    </div>
 </body>
 </html>
