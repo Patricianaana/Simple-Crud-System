@@ -4,34 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Employee Schools</title>
+    <title>Employees Schools</title>
 </head>
 <body>
     <div>
-        <h1 style="text-align: center">Welcome to Profile!</h1>
+        <h1 style="text-align: center">Employee school list</h1>
     </div>
-    <div>
+  
         <table border="5">
-            <tr>
-                <td>ID</td>
-                <td>Employee's Name</td>
-                <td>Elementary School</td>
-                <td>Middle School</td>
-                <td>High School</td>
-                <td>College</td>
+            <tr style="align-contents: center">
+                {{-- <td style="font-weight: bold">ID</td> --}}
+                {{-- <td>Employee ID</td> --}}
+                <td style="font-weight: bold">Elementary School</td>
+                <td style="font-weight: bold">Middle School</td>
+                <td style="font-weight: bold">High School</td>
+                <td style="font-weight: bold">College</td>
             </tr>
 
-            {{-- @foreach($users as $user)
-            <tr>
-                <td>{{$user['id']}}</td>
-                <td>{{$user['name']}}</td>
-                <td>{{$user['elementary']}}</td>
-                <td>{{$user['middle_school']}}</td>
-                <td>{{$user['high_school']}}</td>
-                <td>{{$user['college']}}</td>  
-            </tr>
-            @endforeach --}}
+            @foreach ($data as $worker)
+                <tr>
+                    {{-- <td>{{ $worker['id'] }}</td> --}}
+                    <td>{{ $worker['elementary'] }}</td>
+                    <td>{{ $worker['middle_school'] }}</td>
+                    <td>{{ $worker['high_school'] }}</td>
+                    <td>{{ $worker['college'] }}</td>
+                </tr>         
+            @endforeach
         </table>
+    </div>
+
+    <div>
+        <h5>Navigate back to employees page</h5>
+        <a href="/">Back</a>
     </div>
 </body>
 </html>

@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 use App\Models\Employee;
+use App\Models\School;
 
 use Illuminate\Http\Request;
 
 class CrudController extends Controller
 {
     // for create
-    function addData(Request $req){
+    function addData(Request $req)
+    {
         $req->validate([
             'name'=>'required',
             'email'=>'required',
@@ -27,7 +29,8 @@ class CrudController extends Controller
     }
 
     //for read
-    function showData(){
+    function showData()
+    {
         $data = Employee::all();
         return view('index',['users'=>$data]);
 
@@ -35,13 +38,15 @@ class CrudController extends Controller
 
     //for update
     //directs user to edit page
-    function editData($id){
+    function editData($id)
+    {
  
         $data = Employee::find($id);
         return view('edit',['data'=>$data]);
     }
 
-    function updateData(Request $req){
+    function updateData(Request $req)
+    {
                //validation user entry
                $req->validate([
                 'name'=>'required',
@@ -60,9 +65,17 @@ class CrudController extends Controller
             return redirect('/');
     }
 
-    function deleteData($id){
+    function deleteData($id)
+    {
         $data = Employee::find($id);
         $data->delete();
         return redirect('/');
+    }
+
+    
+     function showSchools($id)
+    {
+            $data=School::with('getEmployee')->where('employee_id', $id)->get();
+            return view('employeeProfile',compact('data'));
     }
 }
